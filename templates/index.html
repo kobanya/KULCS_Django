@@ -23,6 +23,28 @@
 <body>
     <h1>Kulcsnyilvántartás</h1>
 
+    <form method="POST" >
+
+        {% csrf_token %}
+
+
+        <label for="vezetek_nev"> Vezeték név: </label>
+        <BR>
+        <input type="text" id="vezetek_nev" name="vezetek_nev" required>
+        <BR>
+        <label for="kereszt_nev"> Kereszt név: </label>
+        <BR>
+        <input type="text" id="kereszt_nev" name="kereszt_nev" required>
+         <BR> <BR>
+        <label for="kulcs_szama"> A kulcs száma: </label>
+        <BR>
+        <input type="text" id="kulcs_szama" name="kulcs_szama" required>
+         <BR>   <BR>
+        <input type="submit" id="mentes" value="MENTÉS">
+
+        <BR> <BR>
+    </form>
+
     <table>
         <thead>
             <tr>
