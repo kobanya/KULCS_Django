@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FŐOLDAL</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kulcsnyilvántartás</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Vezeték név</th>
+                <th>Kereszt név</th>
+                <th>Kulcs száma</th>
+                <th>Felvette</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nyilvantartas in nyilvantartas %}
+            <tr>
+                <td>{{ nyilvantartas.vezetek_nev }}</td>
+                <td>{{ nyilvantartas.kereszt_nev }}</td>
+                <td>{{ nyilvantartas.kulcs_szama }}</td>
+                <td>{{ nyilvantartas.datum }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
