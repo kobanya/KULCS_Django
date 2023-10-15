@@ -1,4 +1,11 @@
+import os
+import django
 from django.shortcuts import render, redirect
+
+# Az alábbi sor segít beállítani a Django környezetet
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', '_core.settings')
+django.setup()
+
 from Kezdolap.models import Nyilvantartas
 
 def kezdolap(request):

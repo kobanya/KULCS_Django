@@ -55,15 +55,16 @@
             </tr>
         </thead>
         <tbody>
-            {% for nyilvantartas in nyilvantartas %}
-            <tr>
-                <td>{{ nyilvantartas.vezetek_nev }}</td>
-                <td>{{ nyilvantartas.kereszt_nev }}</td>
-                <td>{{ nyilvantartas.kulcs_szama }}</td>
-                <td>{{ nyilvantartas.datum }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
+    {% for item in nyilvantartas %}
+    <tr>
+        <td>{{ item.vezetek_nev }}</td>
+        <td>{{ item.kereszt_nev }}</td>
+        <td>{{ item.kulcs_szama }}</td>
+        <td>{{ item.datum }}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+
     </table>
 </body>
 </html>
