@@ -9,3 +9,14 @@ class Nyilvantartas(models.Model):
 
     def __str__(self):
         return f"{self.vezetek_nev}  {self.kereszt_nev} - {self.kulcs_szam}"
+
+from django.db import models
+
+class Kulcs(models.Model):
+    kulcs_szam = models.CharField(max_length=100, unique=True)
+    mennyiseg = models.IntegerField(default=0)
+    max_mennyiseg = models.IntegerField(default=100)  # A maximális mennyiség, amit ki lehet adni
+
+    def __str__(self):
+
+        return f"{self.kulcs_szam}  -  {self.max_mennyiseg} / {self.mennyiseg}"
