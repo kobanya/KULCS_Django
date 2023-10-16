@@ -43,8 +43,12 @@ def visszaadva(request, nyilvantartas_id):
     nyilvantartas = Nyilvantartas.objects.get(pk=nyilvantartas_id)
     nyilvantartas.visszaadva = timezone.now()  # aktuális időpont
     nyilvantartas.save()
-    # Növeld a rendelkezésre álló kulcsok mennyiségét
-    kulcs_obj = Kulcs.objects.first()  # Első kulcs objektum
+
+    # A visszaadott kulcs objektum lekérdezése
+    kulcs_obj = Kulcs.objects.get(kulcs_szam=nyilvantartas.kulcs_szam)
+
+    # Növeld a kulcs mennyiségét
     kulcs_obj.mennyiseg += 1
     kulcs_obj.save()
+
     return redirect('kezdolap')
