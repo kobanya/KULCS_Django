@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>FŐOLDAL</title>
     <style>
+        .table-container {
+            width: 100%;
+            overflow: auto;
+            max-height: 340px;
+        }
+
         table {
             border-collapse: collapse;
             width: 100%;
@@ -17,63 +23,71 @@
 
         th {
             background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .ujadat-div {
+            border: 1px solid #000;
+            padding: 10px;
+            width: 300px;
         }
     </style>
 </head>
 <body>
     <h1>Kulcsnyilvántartás</h1>
 
-  <div>
-      <form method="post" action="{% url 'mentes' %}">
-        {% csrf_token %}
-        <label for="vezetek_nev"> Vezeték név: </label>
-        <br>
-        <input type="text" id="vezetek_nev" name="vezetek_nev" required>
-        <br>
-        <label for="kereszt_nev"> Kereszt név: </label>
-        <br>
-        <input type="text" id="kereszt_nev" name="kereszt_nev" required>
-        <br> <br>
-        <label for="kulcs_szama"> A kulcs száma: </label>
-        <br>
-        <input type="text" id="kulcs_szama" name="kulcs_szama" required>
-        <br> <br>
-        <input type="submit" id="mentes" value="MENTÉS">
-        <br> <br>
-    </form>
-  </div>
+    <div class="ujadat-div">
+        <form method="post" action="{% url 'mentes' %}">
+            {% csrf_token %}
+            <label for="vezetek_nev"> Vezeték név: </label>
+            <br>
+            <input type="text" id="vezetek_nev" name="vezetek_nev" required>
+            <br>
+            <label for="kereszt_nev"> Kereszt név: </label>
+            <br>
+            <input type="text" id="kereszt_nev" name="kereszt_nev" required>
+            <br> <br>
+            <label for="kulcs_szama"> A kulcs száma: </label>
+            <br>
+            <input type="text" id="kulcs_szama" name="kulcs_szama" required>
+            <br> <br>
+            <input type="submit" id="mentes" value="MENTÉS">
+            <br> <br>
+        </form>
+    </div>
+    <BR> <BR> <BR>
 
-  <div>
-    <table>
-    <thead>
-        <tr>
-            <th>Vezeték név</th>
-            <th>Kereszt név</th>
-            <th>Kulcs száma</th>
-            <th>Felvette</th>
-            <th>Visszahozta</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in nyilvantartas %}
-<tr {% if item.visszaadva%} style="background-color: white;"
-    {% else %} style="background-color: lightblue;"{% endif %}>
-
-            <td>{{ item.vezetek_nev }}</td>
-            <td>{{ item.kereszt_nev }}</td>
-            <td>{{ item.kulcs_szama }}</td>
-            <td>{{ item.datum }}</td>
-            <td>
-                {% if item.visszaadva %}
-                    {{ item.visszaadva }}
-                {% else %}
-                    <a href="{% url 'visszaadva' item.pk %}"><input type="button" value="Visszaadva"></a>
-                {% endif %}
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-  </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Vezeték név</th>
+                    <th>Kereszt név</th>
+                    <th>Kulcs száma</th>
+                    <th>Felvette</th>
+                    <th>Visszahozta</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in nyilvantartas %}
+                <tr {% if item.visszaadva %} style="background-color: white;" {% else %} style="background-color: lightblue;" {% endif %}>
+                    <td>{{ item.vezetek_nev }}</td>
+                    <td>{{ item.kereszt_nev }}</td>
+                    <td>{{ item.kulcs_szama }}</td>
+                    <td>{{ item.datum }}</td>
+                    <td>
+                        {% if item.visszaadva %}
+                            {{ item.visszaadva }}
+                        {% else %}
+                            <a href="{% url 'visszaadva' item.pk %}"><input type="button" value="Visszaadva"></a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
