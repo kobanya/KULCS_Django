@@ -7,7 +7,7 @@ div {
 .table-container {
     width: 100%;
     overflow: auto;
-    max-height: 305px;
+    max-height: 255px;
 }
 
 table {
@@ -123,5 +123,17 @@ th {
 .kulcs-kartya p {
     font-size: 14px; /* Betűméret az információhoz */
     margin: 5px 0; /* Margin a bekezdések között */
+}
+
+.zold-keret {
+    border: 2px solid green;
+}
+
+.sarga-keret {
+    border: 3px solid yellow;
+}
+
+.piros-keret {
+    border: 3px solid red;
 }
 

@@ -36,24 +36,32 @@
             <br><br>
             <input type="submit" id="mentes" value="MENTÉS">
             <br>
-            <div class="hiba">{% if messages %}
+            <div class="hiba">
+                {% if messages %}
                 <div>
                     {% for message in messages %}
                     <p>{{ message }}</p>
                     {% endfor %}
                 </div>
-            {% endif %}
+                {% endif %}
             </div>
             <br>
         </form>
     </div>
     <div class="masodik-kontener-2div-kulcsok">
     {% for kulcs in elerheto_kulcsok %}
-    <div class="kulcs-kartya">
-        <h2>{{ kulcs.kulcs_szam }}</h2>
-        <p>Elérhető : {{ kulcs.mennyiseg }}</p>
-        <p>Összmennyiség: {{ kulcs.max_mennyiseg }}</p>
-    </div>
+        <div class="kulcs-kartya
+            {% if kulcs.mennyiseg == kulcs.max_mennyiseg %}
+                zold-keret
+            {% elif kulcs.mennyiseg < kulcs.max_mennyiseg and kulcs.mennyiseg > 0 %}
+                sarga-keret
+            {% else %}
+                piros-keret
+            {% endif %}">
+            <h2>{{ kulcs.kulcs_szam }}</h2>
+            <p>Elérhető: {{ kulcs.mennyiseg }}</p>
+            <p>Összmennyiség: {{ kulcs.max_mennyiseg }}</p>
+        </div>
     {% endfor %}
 </div>
 
