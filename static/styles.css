@@ -97,4 +97,31 @@ th {
     border-radius: 10px;
     width: 100%;
     margin-left: 10px;
+    max-height: 290px; /* Maximális magasság */
+    overflow-y: auto; /* Görgethetőség, ha a tartalom nem fér el */
+    display: flex; /* Hozzáadva: Az elemek egymás mellé kerülnek */
+    flex-wrap: wrap; /* Hozzáadva: Több sorba kerülnek az elemek */
 }
+
+/* kulcs kártyák*/
+
+.kulcs-kartya {
+    border: 2px solid #ddd; /* Szegély a kártyákhoz */
+    padding: 5px; /* Belső tér a kártyákon belül */
+    margin: 10px; /* Külső tér a kártyák körül */
+    background-color: #f9f9f9; /* Háttérszín a kártyáknak */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Árnyék a kártyákhoz */
+    width:130px;
+    height:60px;
+}
+
+.kulcs-kartya h2 {
+    font-size: 18px; /* Betűméret a kulcsszámhoz */
+    margin: 0; /* Margin resetelése */
+}
+
+.kulcs-kartya p {
+    font-size: 14px; /* Betűméret az információhoz */
+    margin: 5px 0; /* Margin a bekezdések között */
+}
+
