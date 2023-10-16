@@ -52,14 +52,23 @@ th {
     padding-left: 10px;
     padding-top: 5px;
     float: right;
-    height: 50px;
+    height: 55px;
 }
 
 .kiadott-kulcsok-szama {
     font-size: 35px;
-    color: red;
+    color: gray;
     text-align: left;
     white-space: normal; /* Alapértelmezett szóközök megjelenítése */
+}
+
+.piros-kiadott {
+     font-size: 35px;
+     color: red;
+}
+
+.piros-keret {
+    border: 2px solid red;
 }
 
 .ujadat-div {

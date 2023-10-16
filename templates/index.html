@@ -13,9 +13,11 @@
             <h1>Kulcsnyilvántartás</h1>
         </div>
 
-        <div class="kiadott-kulcsok-szama-div">
-            <p>Kiadott kulcsok száma:   <span class="kiadott-kulcsok-szama">  {{ kiadott_kulcsok_szama }}</span></p>
+        <div class="kiadott-kulcsok-szama-div{% if kiadott_kulcsok_szama > 0 %} piros-keret{% endif %}">
+            <p>Kiadott kulcsok száma: <span class="{% if kiadott_kulcsok_szama > 0 %}
+               piros-kiadott {% endif %}">{{ kiadott_kulcsok_szama }}</span></p>
         </div>
+
     </div>
 
     <div class="masodiksor-container">
