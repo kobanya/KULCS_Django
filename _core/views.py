@@ -4,7 +4,7 @@ from django.utils import timezone
 from Kezdolap.models import Nyilvantartas
 
 def kezdolap(request):
-    nyilvantartas = Nyilvantartas.objects.all()
+    nyilvantartas = Nyilvantartas.objects.all().order_by('visszaadva', 'datum')  # rendezés a vissza nem adaottak alapján
     return render(request, 'index.html', {"nyilvantartas": nyilvantartas})
 
 def mentes(request):
