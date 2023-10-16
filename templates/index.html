@@ -23,11 +23,9 @@
 <body>
     <h1>Kulcsnyilvántartás</h1>
 
-    <form method="post" action="{% url 'mentes' %}">
-
-
+  <div>
+      <form method="post" action="{% url 'mentes' %}">
         {% csrf_token %}
-
         <label for="vezetek_nev"> Vezeték név: </label>
         <br>
         <input type="text" id="vezetek_nev" name="vezetek_nev" required>
@@ -43,34 +41,39 @@
         <input type="submit" id="mentes" value="MENTÉS">
         <br> <br>
     </form>
+  </div>
 
+  <div>
     <table>
-        <thead>
-            <tr>
-                <th>Vezeték név</th>
-                <th>Kereszt név</th>
-                <th>Kulcs száma</th>
-                <th>Felvette</th>
-                <th>Visszahozta</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in nyilvantartas %}
-            <tr>
-                <td>{{ item.vezetek_nev }}</td>
-                <td>{{ item.kereszt_nev }}</td>
-                <td>{{ item.kulcs_szama }}</td>
-                <td>{{ item.datum }}</td>
-                <td>
-                    {% if item.visszaadva %}
-                        {{ item.visszaadva }}
-                    {% else %}
-                        <a href="{% url 'visszaadva' item.pk %}"><input type="button" value="Visszaadva"></a>
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <thead>
+        <tr>
+            <th>Vezeték név</th>
+            <th>Kereszt név</th>
+            <th>Kulcs száma</th>
+            <th>Felvette</th>
+            <th>Visszahozta</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in nyilvantartas %}
+<tr {% if item.visszaadva%} style="background-color: white;"
+    {% else %} style="background-color: lightblue;"{% endif %}>
+
+            <td>{{ item.vezetek_nev }}</td>
+            <td>{{ item.kereszt_nev }}</td>
+            <td>{{ item.kulcs_szama }}</td>
+            <td>{{ item.datum }}</td>
+            <td>
+                {% if item.visszaadva %}
+                    {{ item.visszaadva }}
+                {% else %}
+                    <a href="{% url 'visszaadva' item.pk %}"><input type="button" value="Visszaadva"></a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+  </div>
 </body>
 </html>
