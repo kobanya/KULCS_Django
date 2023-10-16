@@ -51,7 +51,7 @@
             background-color: #f2f2f2;
             border: 1px solid #ccc;
             border-radius: 10px;
-            width: 300px;
+            width: 200px;
             font-size: 15px;
             text-align: left;
             padding-left: 10px;
@@ -70,6 +70,13 @@
             padding-left: 20px;
             padding-top: 10px;
         }
+
+        .kiadott-kulcsok-szama {
+           font-size: 35px;
+           color: red;
+           text-align: left;
+           white-space: normal; /* Alapértelmezett szóközök megjelenítése */
+        }
     </style>
 </head>
 <body>
@@ -80,7 +87,7 @@
         </div>
 
         <div class="kiadott-kulcsok-szama-div">
-            <p>A kiadott kulcsok száma:</p>
+            <p>Kiadott kulcsok száma:   <span class="kiadott-kulcsok-szama">  {{ kiadott_kulcsok_szama }}</span></p>
         </div>
     </div>
 
