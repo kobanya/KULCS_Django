@@ -23,26 +23,25 @@
 <body>
     <h1>Kulcsnyilvántartás</h1>
 
-    <form method="POST" >
+    <form method="post" action="{% url 'mentes' %}">
+
 
         {% csrf_token %}
 
-
         <label for="vezetek_nev"> Vezeték név: </label>
-        <BR>
+        <br>
         <input type="text" id="vezetek_nev" name="vezetek_nev" required>
-        <BR>
+        <br>
         <label for="kereszt_nev"> Kereszt név: </label>
-        <BR>
+        <br>
         <input type="text" id="kereszt_nev" name="kereszt_nev" required>
-         <BR> <BR>
+        <br> <br>
         <label for="kulcs_szama"> A kulcs száma: </label>
-        <BR>
+        <br>
         <input type="text" id="kulcs_szama" name="kulcs_szama" required>
-         <BR>   <BR>
+        <br> <br>
         <input type="submit" id="mentes" value="MENTÉS">
-
-        <BR> <BR>
+        <br> <br>
     </form>
 
     <table>
@@ -52,19 +51,26 @@
                 <th>Kereszt név</th>
                 <th>Kulcs száma</th>
                 <th>Felvette</th>
+                <th>Visszahozta</th>
             </tr>
         </thead>
         <tbody>
-    {% for item in nyilvantartas %}
-    <tr>
-        <td>{{ item.vezetek_nev }}</td>
-        <td>{{ item.kereszt_nev }}</td>
-        <td>{{ item.kulcs_szama }}</td>
-        <td>{{ item.datum }}</td>
-    </tr>
-    {% endfor %}
-</tbody>
-
+            {% for item in nyilvantartas %}
+            <tr>
+                <td>{{ item.vezetek_nev }}</td>
+                <td>{{ item.kereszt_nev }}</td>
+                <td>{{ item.kulcs_szama }}</td>
+                <td>{{ item.datum }}</td>
+                <td>
+                    {% if item.visszaadva %}
+                        {{ item.visszaadva }}
+                    {% else %}
+                        <a href="{% url 'visszaadva' item.pk %}"><input type="button" value="Visszaadva"></a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </body>
 </html>
