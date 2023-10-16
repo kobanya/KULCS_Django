@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <title>FŐOLDAL</title>
     <style>
+        div {
+             margin-bottom: 10px; /* Az összes div  */
+        }
+
         .table-container {
             width: 100%;
             overflow: auto;
             max-height: 340px;
+
+
         }
 
         table {
             border-collapse: collapse;
             width: 100%;
-            margin-top: 20px;
+            max-height: 340px;
         }
 
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 10px;
             text-align: left;
         }
 
@@ -33,12 +39,16 @@
             background-color: #f2f2f2;
             border: 1px solid #ccc;
             border-radius: 10px;
-            padding: 20px;
             width: 250px;
-            font-size: 18px;
+            font-size: 20px;
             text-align:left;
             float: left;
+            padding-left: 20px;
+            padding-top: 10px;
         }
+
+
+
     </style>
 </head>
 <body>
@@ -63,14 +73,14 @@
             <br> <br>
         </form>
     </div>
-    <BR>
+
 
     <div class="table-container">
         <table>
             <thead>
                 <tr>
-                    <th>Vezeték név</th>
-                    <th>Kereszt név</th>
+                    <th>Vezetéknév</th>
+                    <th>Keresztnév</th>
                     <th>Kulcs száma</th>
                     <th>Felvette</th>
                     <th>Visszahozta</th>
@@ -81,7 +91,7 @@
                 <tr {% if item.visszaadva %} style="background-color: white;" {% else %} style="background-color: lightblue;" {% endif %}>
                     <td>{{ item.vezetek_nev }}</td>
                     <td>{{ item.kereszt_nev }}</td>
-                    <td>{{ item.kulcs_szama }}</td>
+                    <td>{{ item.kulcs_szam }}</td>
                     <td>{{ item.datum }}</td>
                     <td>
                         {% if item.visszaadva %}
