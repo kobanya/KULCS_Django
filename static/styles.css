@@ -33,6 +33,7 @@ th {
 .elsosor-container {
     display: flex;
     justify-content: space-between; /* Ezzel egymás mellé kerülnek */
+    width: 100%;
 }
 
 .elso-sor-1div {
@@ -40,6 +41,20 @@ th {
     text-align: left;
     padding-left: 10px;
     padding-top: 5px;
+}
+
+.qr_gomb {
+    display: flex;
+    border: 2px solid #ddd; /* Szegély a kártyákhoz */
+    padding: 1px; /* Belső tér a kártyákon belül */
+    margin-right: 10px; /* Külső tér a kártyák körül */
+    margin-top:1px
+    background-color: #f9f9f9; /* Háttérszín a kártyáknak */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Árnyék a kártyákhoz */
+    width:60px;
+    height:60px;
+    margin-left: auto;
+
 }
 
 .kiadott-kulcsok-szama-div {

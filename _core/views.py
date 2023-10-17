@@ -29,7 +29,7 @@ def mentes(request):
 
 
             except Kulcs.DoesNotExist:
-                messages.error(request, "A megadott kulcs nem érhető el.")
+                messages.error(request, "A megadott kulcs nem érhető el!")
             else:
                 Nyilvantartas.objects.create(vezetek_nev=vezetek_nev, kereszt_nev=kereszt_nev, kulcs_szam=kulcs_szam)
                 kulcs_obj.mennyiseg -= 1
