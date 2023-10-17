@@ -7,14 +7,14 @@ div {
 .table-container {
     width: 100%;
     overflow: auto;
-    max-height: 255px;
+    max-height: 245px;
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
     max-height: 305px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 th, td {
@@ -67,7 +67,7 @@ th {
     padding-left: 10px;
     padding-top: 5px;
     float: right;
-    height: 55px;
+    height: 60px;
 }
 
 .kiadott-kulcsok-szama {
@@ -112,7 +112,7 @@ th {
     border-radius: 10px;
     width: 100%;
     margin-left: 10px;
-    max-height: 290px; /* Maximális magasság */
+    max-height: 310px; /* Maximális magasság */
     overflow-y: auto; /* Görgethetőség, ha a tartalom nem fér el */
     display: flex; /* Hozzáadva: Az elemek egymás mellé kerülnek */
     flex-wrap: wrap; /* Hozzáadva: Több sorba kerülnek az elemek */
@@ -126,8 +126,8 @@ th {
     margin: 10px; /* Külső tér a kártyák körül */
     background-color: #f9f9f9; /* Háttérszín a kártyáknak */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Árnyék a kártyákhoz */
-    width:130px;
-    height:60px;
+    width:140px;
+    height:70px;
 }
 
 .kulcs-kartya h2 {

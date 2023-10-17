@@ -56,7 +56,7 @@
             <br>
         </form>
     </div>
-    <div class="masodik-kontener-2div-kulcsok">
+<div class="masodik-kontener-2div-kulcsok">
     {% for kulcs in elerheto_kulcsok %}
         <div class="kulcs-kartya
             {% if kulcs.mennyiseg == kulcs.max_mennyiseg %}
@@ -66,12 +66,18 @@
             {% else %}
                 piros-keret
             {% endif %}">
-            <h2>{{ kulcs.kulcs_szam }}</h2>
-            <p>Elérhető: {{ kulcs.mennyiseg }}</p>
-            <p>Összmennyiség: {{ kulcs.max_mennyiseg }}</p>
+            <div class="kulcs-tartalom" style="width: 100%; height: 100%; position: relative;">
+                <h2>{{ kulcs.kulcs_szam }}</h2>
+                <p>Elérhető: {{ kulcs.mennyiseg }}</p>
+                <p>Összmennyiség: {{ kulcs.max_mennyiseg }}</p>
+                <img src="static/kulcs1.png" alt="Kulcs" width="40" height="50" style="position: absolute; top: 0; right: 0;">
+            </div>
         </div>
     {% endfor %}
 </div>
+
+
+
 
 </div>
 
