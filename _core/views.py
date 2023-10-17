@@ -19,7 +19,7 @@ def mentes(request):
     if request.method == "POST":
         vezetek_nev = request.POST.get('vezetek_nev')
         kereszt_nev = request.POST.get('kereszt_nev')
-        kulcs_szam = request.POST.get('kulcs_szam')
+        kulcs_szam = request.POST.get('kulcs_szam').upper()
 
         # Ellenőrzés
         if vezetek_nev and kereszt_nev and kulcs_szam:
