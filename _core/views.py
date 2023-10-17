@@ -52,3 +52,14 @@ def visszaadva(request, nyilvantartas_id):
     kulcs_obj.save()
 
     return redirect('kezdolap')
+def qr(request):
+    nyilvantartas = Nyilvantartas.objects.all().order_by('visszaadva',
+                                                         '-datum')  # rendezés a vissza nem adaottak alapján
+    kiadott_kulcsok_szama = nyilvantartas.filter(visszaadva__isnull=True).count()
+    elerheto_kulcsok = Kulcs.objects.all()
+
+    return render(request, 'qr_olvas.html', {
+        "nyilvantartas": nyilvantartas,
+        "kiadott_kulcsok_szama": kiadott_kulcsok_szama,
+        "elerheto_kulcsok": elerheto_kulcsok,
+    })

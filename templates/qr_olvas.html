@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Beolvasás</title>
+</head>
+<body>
+    <h1>QR Beolvasás</h1>
+    <video id="video" width="10%" autoplay></video>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <div id="eredmeny"></div>
+
+    <script src="https://cdn.rawgit.com/cozmo/jsQR/master/dist/jsQR.js"></script>
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const eredmenyDiv = document.getElementById('eredmeny');
+        let elsoKod = null;
+        let masodikKod = null;
+
+        async function init() {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+            video.srcObject = stream;
+        }
+
+        init().catch(console.error);
+
+        video.addEventListener('play', () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const context = canvas.getContext('2d');
+
+            const scanQRCode = async () => {
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+                const code = jsQR(imageData.data, imageData.width, imageData.height);
+
+                if (code && !elsoKod) {
+                    // Az első QR kód beolvasása
+                    elsoKod = code.data;
+                    eredmenyDiv.innerHTML = `Első QR kód tartalom: ${elsoKod}`;
+                } else if (code && !masodikKod && code.data !== elsoKod) {
+                    // A második QR kód beolvasása (eltérő az elsőtől)
+                    masodikKod = code.data;
+                    eredmenyDiv.innerHTML += `<p>Második QR kód tartalom: ${masodikKod}</p>`;
+
+                    // Mindkét QR kód beolvasva, leállítjuk a kamerát
+                    video.srcObject.getTracks().forEach(track => track.stop());
+                }
+
+                requestAnimationFrame(scanQRCode);
+            };
+
+            scanQRCode();
+        });
+    </script>
+</body>
+</html>
