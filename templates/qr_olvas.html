@@ -10,11 +10,34 @@
     <canvas id="canvas" style="display: none;"></canvas>
     <div id="eredmeny"></div>
 
+    <div id="kulcsData" style="display: none;">
+        <h2>Átküldendő adatok:</h2>
+        <p>Vezeték név: <span id="vezetek_nev"></span></p>
+        <p>Keresztnév: <span id="kereszt_nev"></span></p>
+        <p>Kulcs szám: <span id="kulcs_szam"></span></p>
+    </div>
+
+    <form method="post" action="/mentes/">
+        {% csrf_token %}
+        <button type="submit">Mentés</button>
+    </form>
+
+    <!-- Helyezzük el az új gombot -->
+    <button id="megjelenitesGomb">Megjelenítés</button>
+
     <script src="https://cdn.rawgit.com/cozmo/jsQR/master/dist/jsQR.js"></script>
     <script>
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const eredmenyDiv = document.getElementById('eredmeny');
+        const kulcsDataDiv = document.getElementById('kulcsData');
+        const vezetekNevSpan = document.getElementById('vezetek_nev');
+        const keresztNevSpan = document.getElementById('kereszt_nev');
+        const kulcsSzamSpan = document.getElementById('kulcs_szam');
+
+        // Először definiáljuk az új gombot
+        const megjelenitesGomb = document.getElementById('megjelenitesGomb');
+
         let elsoKod = null;
         let masodikKod = null;
 
@@ -44,14 +67,45 @@
                     masodikKod = code.data;
                     eredmenyDiv.innerHTML += `<p>Második QR kód tartalom: ${masodikKod}</p>`;
 
-                    // Mindkét QR kód beolvasva, leállítjuk a kamerát
-                    video.srcObject.getTracks().forEach(track => track.stop());
+                    // Az átküldött adatok megjelenítése
+                    kulcsDataDiv.style.display = 'block';
+
+                    try {
+                        // Próbáljuk meg kinyerni az adatokat a QR kódból
+                        const qrAdatok = masodikKod.split(' ');
+                        const vezetek_nev = qrAdatok[0];
+                        const kereszt_nev = qrAdatok[1];
+                        const kulcs_szam = elsoKod;
+
+                        // Megjelenítjük az adatokat
+                        vezetekNevSpan.textContent = vezetek_nev;
+                        keresztNevSpan.textContent = kereszt_nev;
+                        kulcsSzamSpan.textContent = kulcs_szam;
+
+                        // Az átküldött adatokat elmentjük a gombhoz tartozó datasetbe
+                        megjelenitesGomb.dataset.vezetekNev = vezetek_nev;
+                        megjelenitesGomb.dataset.keresztNev = kereszt_nev;
+                        megjelenitesGomb.dataset.kulcsSzam = kulcs_szam;
+                    } catch (error) {
+                        console.error('Hiba történt a QR kód tartalmának feldolgozásakor:', error);
+                    }
                 }
 
                 requestAnimationFrame(scanQRCode);
             };
 
             scanQRCode();
+        });
+
+        // Adjunk hozzá eseménykezelőt az új gombhoz
+        megjelenitesGomb.addEventListener('click', () => {
+            // Kinyerjük az adatokat a gomb dataset-jéből
+            const kulcs_szam = megjelenitesGomb.dataset.kulcsSzam;
+            const vezetek_nev = megjelenitesGomb.dataset.vezetekNev;
+            const kereszt_nev = megjelenitesGomb.dataset.keresztNev;
+
+            // Itt jelenítjük meg az elkészített POST adatokat egy alert ablakban
+            alert(`Elkészített POST adatok:\nKulcs szám: ${kulcs_szam}\nVezeték név: ${vezetek_nev}\nKeresztnév: ${kereszt_nev}`);
         });
     </script>
 </body>
