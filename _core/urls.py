@@ -7,6 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('visszaadva/<int:nyilvantartas_id>/', views.visszaadva, name='visszaadva'),
     path('mentes/', views.mentes, name='mentes'),
-    path('qr/',views.qr,name='qr')
+
 
 ]
