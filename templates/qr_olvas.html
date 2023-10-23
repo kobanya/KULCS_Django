@@ -8,7 +8,6 @@
     <h1>QR Beolvasás</h1>
     <video id="video" width="10%" autoplay></video>
     <canvas id="canvas" style="display: none;"></canvas>
-    <div id="eredmeny"></div>
 
     <form method="post" action="{% url 'mentes' %}">
         {% csrf_token %}
@@ -31,7 +30,6 @@
     <script>
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
-        const eredmenyDiv = document.getElementById('eredmeny');
 
         let elsoKod = null;
         let masodikKod = null;
@@ -57,28 +55,36 @@
                 if (code && !elsoKod) {
                     // Az első QR kód beolvasása
                     elsoKod = code.data;
-                    eredmenyDiv.innerHTML = `Első QR kód tartalom: ${elsoKod}`;
+
+                    try {
+                        // Próbáljuk meg kinyerni az adatokat a QR kódból
+                        const qrAdatok = elsoKod.split(' ');
+                        const vezetek_nev = qrAdatok[0];
+                        const kereszt_nev = qrAdatok[1];
+                        const kulcs_szam = elsoKod;
+
+                        // Az űrlap mezőibe írjuk be az első QR kód adatait
+                        document.getElementById('kulcs_szam').value = kulcs_szam;
+                        document.getElementById('vezetek_nev').value = "";
+                        document.getElementById('kereszt_nev').value = "";
+                    } catch (error) {
+                        console.error('Hiba történt az első QR kód tartalmának feldolgozásakor:', error);
+                    }
                 } else if (code && !masodikKod && code.data !== elsoKod) {
                     // A második QR kód beolvasása (eltérő az elsőtől)
                     masodikKod = code.data;
-                    eredmenyDiv.innerHTML += `<p>Második QR kód tartalom: ${masodikKod}</p>`;
 
                     try {
                         // Próbáljuk meg kinyerni az adatokat a QR kódból
                         const qrAdatok = masodikKod.split(' ');
                         const vezetek_nev = qrAdatok[0];
                         const kereszt_nev = qrAdatok[1];
-                        const kulcs_szam = elsoKod;
 
-                        // Az űrlap mezőibe írjuk be a QR kód adatait
+                        // Az űrlap mezőibe írjuk be a második QR kód adatait
                         document.getElementById('vezetek_nev').value = vezetek_nev;
                         document.getElementById('kereszt_nev').value = kereszt_nev;
-                        document.getElementById('kulcs_szam').value = kulcs_szam;
-
-                        // Kamera leállítása
-                        stream.getTracks().forEach(track => track.stop());
                     } catch (error) {
-                        console.error('Hiba történt a QR kód tartalmának feldolgozásakor:', error);
+                        console.error('Hiba történt a második QR kód tartalmának feldolgozásakor:', error);
                     }
                 }
 
