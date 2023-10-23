@@ -40,9 +40,10 @@
 
         let elsoKod = null;
         let masodikKod = null;
+        let stream = null;
 
         async function init() {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+            stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
             video.srcObject = stream;
         }
 
@@ -86,6 +87,9 @@
                         megjelenitesGomb.dataset.vezetekNev = vezetek_nev;
                         megjelenitesGomb.dataset.keresztNev = kereszt_nev;
                         megjelenitesGomb.dataset.kulcsSzam = kulcs_szam;
+
+                        // Kamera leállítása
+                        stream.getTracks().forEach(track => track.stop());
                     } catch (error) {
                         console.error('Hiba történt a QR kód tartalmának feldolgozásakor:', error);
                     }
