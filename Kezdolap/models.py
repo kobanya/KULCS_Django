@@ -10,7 +10,6 @@ class Nyilvantartas(models.Model):
     def __str__(self):
         return f"{self.vezetek_nev}  {self.kereszt_nev} - {self.kulcs_szam}"
 
-from django.db import models
 
 class Kulcs(models.Model):
     kulcs_szam = models.CharField(max_length=100, unique=True)
