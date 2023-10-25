@@ -48,12 +48,12 @@ th {
     border: 2px solid #ddd; /* Szegély a kártyákhoz */
     padding: 1px; /* Belső tér a kártyákon belül */
     margin-right: 10px; /* Külső tér a kártyák körül */
-    margin-top:1px
     background-color: #f9f9f9; /* Háttérszín a kártyáknak */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Árnyék a kártyákhoz */
     width:60px;
     height:60px;
     margin-left: auto;
+    display: flex;
 
 }
 
@@ -151,4 +151,35 @@ th {
 .piros-keret {
     border: 3px solid red;
 }
+
+/* Új szabály a szürke háttérhez */
+
+.szurke-hatter {
+    background-color: #f2f2f2; /* Szürke háttérszín */
+    display: flex; /* Az elemek egymás mellé kerülnek */
+    align-items: center; /* Középre igazítás függőlegesen */
+    padding: 5px; /* Belső tér az elemek és a háttér között */
+}
+
+
+
+.gomb-es-video-container {
+    position: relative;
+}
+
+#mentes {
+    margin-right: 10px; /* Adj térközt a videó és a gomb között */
+}
+
+.kamera-kep {
+    margin-top: 10px;
+
+    display: inline-block;
+    width: 79px;
+    height: 59px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    vertical-align: baseline; /* Középre igazítás függőlegesen a gombbal */
+}
+
+
 

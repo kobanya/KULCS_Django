@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FŐOLDAL- Nyilvántartás</title>
+    <title>Kulcs nyilvántartás</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
@@ -13,15 +13,13 @@
         <h1>Kulcs nyilvántartás</h1>
     </div>
 
+
     <div class="qr_gomb">
         <a href="#" id="startKamera">
             <img src="static/qr_piros.webp" alt="QR beolvasas" width="59" height="59">
         </a>
     </div>
 
-    <div class="kamera-kep" style="display: none;">
-        <video id="video" width="10%" autoplay></video>
-    </div>
 
     <div class="kiadott-kulcsok-szama-div{% if kiadott_kulcsok_szama > 0 %} piros-keret{% endif %}">
         <p>Kiadott kulcsok száma: <span class="{% if kiadott_kulcsok_szama > 0 %} piros-kiadott {% endif %}">{{ kiadott_kulcsok_szama }}</span></p>
@@ -44,8 +42,16 @@
             <br>
             <input type="text" id="kulcs_szam" name="kulcs_szam" required>
             <br><br>
-            <input type="submit" id="mentes" value="MENTÉS">
+
+            <div>
+                <input type="submit" id="mentes" value="MENTÉS">
+                 <Br>
+                <video class="kamera-kep" style="display: none;" id="video" width="79" height="59" autoplay></video>
+            </div>
+
+
             <br>
+
             <div class="hiba">
                 {% if messages %}
                 <div>
