@@ -11,4 +11,6 @@
 <li> Az adatbázis betöltése: python3 manage.py migrate
 <li> Administrator létrehozása:    python3 manage.py createsuperuser
 <li> Bejelentkezéshez az admin felületre a böngészőbe a következőt írjátok: localhost:8000/admin
+<li> QR beolvasásos kulcskiadás
 
+![Alt szöveg](https://github.com/kobanya/KULCS_Django/blob/master/static/QR_olvasas.gif)
