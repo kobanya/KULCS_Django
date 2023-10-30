@@ -172,6 +172,20 @@
                     const qrAdatok = masodikKod.split(' ');
                     const vezetek_nev = qrAdatok[0];
                     const kereszt_nev = qrAdatok[1];
+(venv) bela@bela-VivoBook:~/PycharmProjects/KULCS_Django/Test_Robot_Selenium$ robot vezetek_teszt.robot
+==============================================================================
+Vezetek Teszt
+==============================================================================
+Form Submission Test With Invalid Key                                 | FAIL |
+No keyword with name 'Submit Form With Invalid vezetek_nev' found. Did you try using keyword 'SeleniumLibrary.Submit Form' and forgot to use enough whitespace between keyword and arguments?
+------------------------------------------------------------------------------
+Vezetek Teszt                                                         | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  /home/bela/PycharmProjects/KULCS_Django/Test_Robot_Selenium/output.xml
+Log:     /home/bela/PycharmProjects/KULCS_Django/Test_Robot_Selenium/log.html
+Report:  /home/bela/PycharmProjects/KULCS_Django/Test_Robot_Selenium/report.html
+(venv) bela@bela-VivoBook:~/PycharmProjects/KULCS_Django/Test_Robot_Selenium$
 
                     // Az űrlap mezőibe írjuk be a második QR kód adatait
                     document.getElementById('vezetek_nev').value = vezetek_nev;
