@@ -3,11 +3,8 @@ import magyar
 
 class NevekLibrary:
 
-    def __init__(self, arg=None):
-        pass
-
     def generate_random_name(self):
-        kulcs = ["E05", "E06", "E07", "E13", "E14", "C06", "C04", "C03"]
+        kulcs = ["E04","E05", "E06", "E07", "E12","E13", "E14", "C06", "C04", "C03","A25","C05","C04","C11","C12","C13", "C14", "C15", "C16"]
         first_name = random.choice(magyar.keresztnev_v)
         last_name = random.choice(magyar.vezeteknev)
         kulcs_szam = random.choice(kulcs)

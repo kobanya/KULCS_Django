@@ -9,7 +9,7 @@ ${BROWSER}    chrome
 *** Test Cases ***
 Form Submission Test
     Open Browser    ${URL}    ${BROWSER}
-    FOR    ${i}    IN RANGE    20
+    FOR    ${i}    IN RANGE    200
         ${first_name}    ${last_name}    ${kulcs_szam}=    Generate Random Name
         Submit Form    ${first_name}    ${last_name}  ${kulcs_szam}
     END
