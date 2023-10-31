@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.6 on linux)" generated="20231031 07:54:20.532" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.6 on linux)" generated="20231031 08:01:46.668" rpa="false" schemaversion="4">
 <suite id="s1" name="50 Teszt" source="/home/bela/PycharmProjects/KULCS_Django/Test_Robot_Selenium/50_teszt.robot">
 <test id="s1-t1" name="Form Submission Test" line="10">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231031 07:54:20.595" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
-<status status="PASS" starttime="20231031 07:54:20.595" endtime="20231031 07:54:21.892"/>
+<msg timestamp="20231031 08:01:46.731" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<status status="PASS" starttime="20231031 08:01:46.731" endtime="20231031 08:01:48.050"/>
 </kw>
 <for flavor="IN RANGE">
 <var>${i}</var>
-<value>5</value>
+<value>20</value>
 <iter>
 <var name="${i}">0</var>
 <kw name="Generate Random Name" library="nevek.NevekLibrary">
 <var>${first_name}</var>
 <var>${last_name}</var>
 <var>${kulcs_szam}</var>
-<msg timestamp="20231031 07:54:21.892" level="INFO">${first_name} = Flórián</msg>
-<msg timestamp="20231031 07:54:21.892" level="INFO">${last_name} = Gulyás</msg>
-<msg timestamp="20231031 07:54:21.893" level="INFO">${kulcs_szam} = E05</msg>
-<status status="PASS" starttime="20231031 07:54:21.892" endtime="20231031 07:54:21.893"/>
+<msg timestamp="20231031 08:01:48.051" level="INFO">${first_name} = Sámuel</msg>
+<msg timestamp="20231031 08:01:48.051" level="INFO">${last_name} = Bálint</msg>
+<msg timestamp="20231031 08:01:48.051" level="INFO">${kulcs_szam} = E06</msg>
+<status status="PASS" starttime="20231031 08:01:48.051" endtime="20231031 08:01:48.051"/>
 </kw>
 <kw name="Submit Form">
 <arg>${first_name}</arg>
@@ -29,34 +29,34 @@
 <arg>${kulcs_szam}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=vezetek_nev</arg>
-<arg>${first_name}</arg>
+<arg>${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:21.893" level="INFO">Typing text 'Flórián' into text field 'id=vezetek_nev'.</msg>
-<status status="PASS" starttime="20231031 07:54:21.893" endtime="20231031 07:54:21.976"/>
+<msg timestamp="20231031 08:01:48.053" level="INFO">Typing text 'Bálint' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.052" endtime="20231031 08:01:48.124"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=kereszt_nev</arg>
-<arg>${last_name}</arg>
+<arg>${first_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:21.977" level="INFO">Typing text 'Gulyás' into text field 'id=kereszt_nev'.</msg>
-<status status="PASS" starttime="20231031 07:54:21.976" endtime="20231031 07:54:22.034"/>
+<msg timestamp="20231031 08:01:48.125" level="INFO">Typing text 'Sámuel' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.124" endtime="20231031 08:01:48.170"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=kulcs_szam</arg>
 <arg>${kulcs_szam}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.034" level="INFO">Typing text 'E05' into text field 'id=kulcs_szam'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.034" endtime="20231031 07:54:22.101"/>
+<msg timestamp="20231031 08:01:48.171" level="INFO">Typing text 'E06' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.170" endtime="20231031 08:01:48.234"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id=mentes</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.102" level="INFO">Clicking button 'id=mentes'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.102" endtime="20231031 07:54:22.192"/>
+<msg timestamp="20231031 08:01:48.234" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.234" endtime="20231031 08:01:48.331"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:21.893" endtime="20231031 07:54:22.192"/>
+<status status="PASS" starttime="20231031 08:01:48.051" endtime="20231031 08:01:48.331"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:21.892" endtime="20231031 07:54:22.192"/>
+<status status="PASS" starttime="20231031 08:01:48.050" endtime="20231031 08:01:48.331"/>
 </iter>
 <iter>
 <var name="${i}">1</var>
@@ -64,10 +64,10 @@
 <var>${first_name}</var>
 <var>${last_name}</var>
 <var>${kulcs_szam}</var>
-<msg timestamp="20231031 07:54:22.193" level="INFO">${first_name} = Bettina</msg>
-<msg timestamp="20231031 07:54:22.193" level="INFO">${last_name} = Fazekas</msg>
-<msg timestamp="20231031 07:54:22.193" level="INFO">${kulcs_szam} = E05</msg>
-<status status="PASS" starttime="20231031 07:54:22.192" endtime="20231031 07:54:22.193"/>
+<msg timestamp="20231031 08:01:48.331" level="INFO">${first_name} = Flórián</msg>
+<msg timestamp="20231031 08:01:48.331" level="INFO">${last_name} = Herczeg</msg>
+<msg timestamp="20231031 08:01:48.331" level="INFO">${kulcs_szam} = E07</msg>
+<status status="PASS" starttime="20231031 08:01:48.331" endtime="20231031 08:01:48.331"/>
 </kw>
 <kw name="Submit Form">
 <arg>${first_name}</arg>
@@ -75,34 +75,34 @@
 <arg>${kulcs_szam}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=vezetek_nev</arg>
-<arg>${first_name}</arg>
+<arg>${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.193" level="INFO">Typing text 'Bettina' into text field 'id=vezetek_nev'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.193" endtime="20231031 07:54:22.244"/>
+<msg timestamp="20231031 08:01:48.332" level="INFO">Typing text 'Herczeg' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.332" endtime="20231031 08:01:48.377"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=kereszt_nev</arg>
-<arg>${last_name}</arg>
+<arg>${first_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.245" level="INFO">Typing text 'Fazekas' into text field 'id=kereszt_nev'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.244" endtime="20231031 07:54:22.288"/>
+<msg timestamp="20231031 08:01:48.378" level="INFO">Typing text 'Flórián' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.377" endtime="20231031 08:01:48.430"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=kulcs_szam</arg>
 <arg>${kulcs_szam}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.288" level="INFO">Typing text 'E05' into text field 'id=kulcs_szam'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.288" endtime="20231031 07:54:22.327"/>
+<msg timestamp="20231031 08:01:48.430" level="INFO">Typing text 'E07' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.430" endtime="20231031 08:01:48.486"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id=mentes</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.328" level="INFO">Clicking button 'id=mentes'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.328" endtime="20231031 07:54:22.397"/>
+<msg timestamp="20231031 08:01:48.487" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.486" endtime="20231031 08:01:48.638"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:22.193" endtime="20231031 07:54:22.397"/>
+<status status="PASS" starttime="20231031 08:01:48.331" endtime="20231031 08:01:48.638"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:22.192" endtime="20231031 07:54:22.397"/>
+<status status="PASS" starttime="20231031 08:01:48.331" endtime="20231031 08:01:48.638"/>
 </iter>
 <iter>
 <var name="${i}">2</var>
@@ -110,10 +110,10 @@
 <var>${first_name}</var>
 <var>${last_name}</var>
 <var>${kulcs_szam}</var>
-<msg timestamp="20231031 07:54:22.397" level="INFO">${first_name} = Eduárd</msg>
-<msg timestamp="20231031 07:54:22.397" level="INFO">${last_name} = Vajda</msg>
-<msg timestamp="20231031 07:54:22.397" level="INFO">${kulcs_szam} = E06</msg>
-<status status="PASS" starttime="20231031 07:54:22.397" endtime="20231031 07:54:22.397"/>
+<msg timestamp="20231031 08:01:48.639" level="INFO">${first_name} = Attila</msg>
+<msg timestamp="20231031 08:01:48.639" level="INFO">${last_name} = Kovács</msg>
+<msg timestamp="20231031 08:01:48.639" level="INFO">${kulcs_szam} = E05</msg>
+<status status="PASS" starttime="20231031 08:01:48.639" endtime="20231031 08:01:48.639"/>
 </kw>
 <kw name="Submit Form">
 <arg>${first_name}</arg>
@@ -121,34 +121,34 @@
 <arg>${kulcs_szam}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=vezetek_nev</arg>
-<arg>${first_name}</arg>
+<arg>${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.398" level="INFO">Typing text 'Eduárd' into text field 'id=vezetek_nev'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.398" endtime="20231031 07:54:22.452"/>
+<msg timestamp="20231031 08:01:48.641" level="INFO">Typing text 'Kovács' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.640" endtime="20231031 08:01:48.691"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=kereszt_nev</arg>
-<arg>${last_name}</arg>
+<arg>${first_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.453" level="INFO">Typing text 'Vajda' into text field 'id=kereszt_nev'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.453" endtime="20231031 07:54:22.528"/>
+<msg timestamp="20231031 08:01:48.692" level="INFO">Typing text 'Attila' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.692" endtime="20231031 08:01:48.737"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=kulcs_szam</arg>
 <arg>${kulcs_szam}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.528" level="INFO">Typing text 'E06' into text field 'id=kulcs_szam'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.528" endtime="20231031 07:54:22.626"/>
+<msg timestamp="20231031 08:01:48.737" level="INFO">Typing text 'E05' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.737" endtime="20231031 08:01:48.792"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id=mentes</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.626" level="INFO">Clicking button 'id=mentes'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.626" endtime="20231031 07:54:22.726"/>
+<msg timestamp="20231031 08:01:48.793" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.792" endtime="20231031 08:01:48.984"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:22.398" endtime="20231031 07:54:22.726"/>
+<status status="PASS" starttime="20231031 08:01:48.639" endtime="20231031 08:01:48.984"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:22.397" endtime="20231031 07:54:22.726"/>
+<status status="PASS" starttime="20231031 08:01:48.639" endtime="20231031 08:01:48.984"/>
 </iter>
 <iter>
 <var name="${i}">3</var>
@@ -156,10 +156,10 @@
 <var>${first_name}</var>
 <var>${last_name}</var>
 <var>${kulcs_szam}</var>
-<msg timestamp="20231031 07:54:22.726" level="INFO">${first_name} = Júlia</msg>
-<msg timestamp="20231031 07:54:22.726" level="INFO">${last_name} = Mészáros</msg>
-<msg timestamp="20231031 07:54:22.726" level="INFO">${kulcs_szam} = E14</msg>
-<status status="PASS" starttime="20231031 07:54:22.726" endtime="20231031 07:54:22.726"/>
+<msg timestamp="20231031 08:01:48.984" level="INFO">${first_name} = Babett</msg>
+<msg timestamp="20231031 08:01:48.984" level="INFO">${last_name} = Kerekes</msg>
+<msg timestamp="20231031 08:01:48.984" level="INFO">${kulcs_szam} = E14</msg>
+<status status="PASS" starttime="20231031 08:01:48.984" endtime="20231031 08:01:48.984"/>
 </kw>
 <kw name="Submit Form">
 <arg>${first_name}</arg>
@@ -167,34 +167,34 @@
 <arg>${kulcs_szam}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=vezetek_nev</arg>
-<arg>${first_name}</arg>
+<arg>${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.727" level="INFO">Typing text 'Júlia' into text field 'id=vezetek_nev'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.727" endtime="20231031 07:54:22.775"/>
+<msg timestamp="20231031 08:01:48.985" level="INFO">Typing text 'Kerekes' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:48.985" endtime="20231031 08:01:49.035"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=kereszt_nev</arg>
-<arg>${last_name}</arg>
+<arg>${first_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.776" level="INFO">Typing text 'Mészáros' into text field 'id=kereszt_nev'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.775" endtime="20231031 07:54:22.833"/>
+<msg timestamp="20231031 08:01:49.036" level="INFO">Typing text 'Babett' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.036" endtime="20231031 08:01:49.078"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=kulcs_szam</arg>
 <arg>${kulcs_szam}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.834" level="INFO">Typing text 'E14' into text field 'id=kulcs_szam'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.834" endtime="20231031 07:54:22.901"/>
+<msg timestamp="20231031 08:01:49.079" level="INFO">Typing text 'E14' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.078" endtime="20231031 08:01:49.133"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id=mentes</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:22.902" level="INFO">Clicking button 'id=mentes'.</msg>
-<status status="PASS" starttime="20231031 07:54:22.901" endtime="20231031 07:54:23.086"/>
+<msg timestamp="20231031 08:01:49.133" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.133" endtime="20231031 08:01:49.269"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:22.726" endtime="20231031 07:54:23.086"/>
+<status status="PASS" starttime="20231031 08:01:48.984" endtime="20231031 08:01:49.269"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:22.726" endtime="20231031 07:54:23.086"/>
+<status status="PASS" starttime="20231031 08:01:48.984" endtime="20231031 08:01:49.269"/>
 </iter>
 <iter>
 <var name="${i}">4</var>
@@ -202,10 +202,10 @@
 <var>${first_name}</var>
 <var>${last_name}</var>
 <var>${kulcs_szam}</var>
-<msg timestamp="20231031 07:54:23.086" level="INFO">${first_name} = Bernadett</msg>
-<msg timestamp="20231031 07:54:23.086" level="INFO">${last_name} = Sajó</msg>
-<msg timestamp="20231031 07:54:23.086" level="INFO">${kulcs_szam} = E05</msg>
-<status status="PASS" starttime="20231031 07:54:23.086" endtime="20231031 07:54:23.086"/>
+<msg timestamp="20231031 08:01:49.269" level="INFO">${first_name} = Szilárd</msg>
+<msg timestamp="20231031 08:01:49.269" level="INFO">${last_name} = Rácz</msg>
+<msg timestamp="20231031 08:01:49.269" level="INFO">${kulcs_szam} = E06</msg>
+<status status="PASS" starttime="20231031 08:01:49.269" endtime="20231031 08:01:49.269"/>
 </kw>
 <kw name="Submit Form">
 <arg>${first_name}</arg>
@@ -213,44 +213,734 @@
 <arg>${kulcs_szam}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=vezetek_nev</arg>
-<arg>${first_name}</arg>
+<arg>${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:23.087" level="INFO">Typing text 'Bernadett' into text field 'id=vezetek_nev'.</msg>
-<status status="PASS" starttime="20231031 07:54:23.086" endtime="20231031 07:54:23.153"/>
+<msg timestamp="20231031 08:01:49.270" level="INFO">Typing text 'Rácz' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.269" endtime="20231031 08:01:49.318"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=kereszt_nev</arg>
-<arg>${last_name}</arg>
+<arg>${first_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:23.154" level="INFO">Typing text 'Sajó' into text field 'id=kereszt_nev'.</msg>
-<status status="PASS" starttime="20231031 07:54:23.153" endtime="20231031 07:54:23.223"/>
+<msg timestamp="20231031 08:01:49.319" level="INFO">Typing text 'Szilárd' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.318" endtime="20231031 08:01:49.360"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=kulcs_szam</arg>
 <arg>${kulcs_szam}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:23.224" level="INFO">Typing text 'E05' into text field 'id=kulcs_szam'.</msg>
-<status status="PASS" starttime="20231031 07:54:23.223" endtime="20231031 07:54:23.283"/>
+<msg timestamp="20231031 08:01:49.361" level="INFO">Typing text 'E06' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.360" endtime="20231031 08:01:49.410"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id=mentes</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231031 07:54:23.284" level="INFO">Clicking button 'id=mentes'.</msg>
-<status status="PASS" starttime="20231031 07:54:23.283" endtime="20231031 07:54:23.415"/>
+<msg timestamp="20231031 08:01:49.411" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.411" endtime="20231031 08:01:49.564"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:23.086" endtime="20231031 07:54:23.415"/>
+<status status="PASS" starttime="20231031 08:01:49.269" endtime="20231031 08:01:49.564"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:23.086" endtime="20231031 07:54:23.415"/>
+<status status="PASS" starttime="20231031 08:01:49.269" endtime="20231031 08:01:49.564"/>
 </iter>
-<status status="PASS" starttime="20231031 07:54:21.892" endtime="20231031 07:54:23.415"/>
+<iter>
+<var name="${i}">5</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:49.564" level="INFO">${first_name} = Albin</msg>
+<msg timestamp="20231031 08:01:49.564" level="INFO">${last_name} = Juhász</msg>
+<msg timestamp="20231031 08:01:49.564" level="INFO">${kulcs_szam} = C04</msg>
+<status status="PASS" starttime="20231031 08:01:49.564" endtime="20231031 08:01:49.564"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:49.565" level="INFO">Typing text 'Juhász' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.565" endtime="20231031 08:01:49.617"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:49.618" level="INFO">Typing text 'Albin' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.617" endtime="20231031 08:01:49.662"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:49.663" level="INFO">Typing text 'C04' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.662" endtime="20231031 08:01:49.703"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:49.704" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.703" endtime="20231031 08:01:49.848"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:49.565" endtime="20231031 08:01:49.848"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:49.564" endtime="20231031 08:01:49.848"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:49.848" level="INFO">${first_name} = Márk</msg>
+<msg timestamp="20231031 08:01:49.848" level="INFO">${last_name} = László</msg>
+<msg timestamp="20231031 08:01:49.848" level="INFO">${kulcs_szam} = E14</msg>
+<status status="PASS" starttime="20231031 08:01:49.848" endtime="20231031 08:01:49.848"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:49.849" level="INFO">Typing text 'László' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.849" endtime="20231031 08:01:49.893"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:49.893" level="INFO">Typing text 'Márk' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.893" endtime="20231031 08:01:49.930"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:49.931" level="INFO">Typing text 'E14' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.930" endtime="20231031 08:01:49.969"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:49.970" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:49.969" endtime="20231031 08:01:50.103"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:49.848" endtime="20231031 08:01:50.103"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:49.848" endtime="20231031 08:01:50.103"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:50.103" level="INFO">${first_name} = Bianka</msg>
+<msg timestamp="20231031 08:01:50.103" level="INFO">${last_name} = Gál</msg>
+<msg timestamp="20231031 08:01:50.103" level="INFO">${kulcs_szam} = C03</msg>
+<status status="PASS" starttime="20231031 08:01:50.103" endtime="20231031 08:01:50.103"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.104" level="INFO">Typing text 'Gál' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.103" endtime="20231031 08:01:50.145"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.145" level="INFO">Typing text 'Bianka' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.145" endtime="20231031 08:01:50.184"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.185" level="INFO">Typing text 'C03' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.184" endtime="20231031 08:01:50.242"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.242" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.242" endtime="20231031 08:01:50.393"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:50.103" endtime="20231031 08:01:50.393"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:50.103" endtime="20231031 08:01:50.393"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:50.393" level="INFO">${first_name} = Csenge</msg>
+<msg timestamp="20231031 08:01:50.393" level="INFO">${last_name} = Nagy-Balogh</msg>
+<msg timestamp="20231031 08:01:50.393" level="INFO">${kulcs_szam} = E06</msg>
+<status status="PASS" starttime="20231031 08:01:50.393" endtime="20231031 08:01:50.393"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.394" level="INFO">Typing text 'Nagy-Balogh' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.393" endtime="20231031 08:01:50.442"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.443" level="INFO">Typing text 'Csenge' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.442" endtime="20231031 08:01:50.483"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.484" level="INFO">Typing text 'E06' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.483" endtime="20231031 08:01:50.541"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.542" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.541" endtime="20231031 08:01:50.677"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:50.393" endtime="20231031 08:01:50.677"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:50.393" endtime="20231031 08:01:50.677"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:50.677" level="INFO">${first_name} = Babett</msg>
+<msg timestamp="20231031 08:01:50.677" level="INFO">${last_name} = Gombos</msg>
+<msg timestamp="20231031 08:01:50.677" level="INFO">${kulcs_szam} = E05</msg>
+<status status="PASS" starttime="20231031 08:01:50.677" endtime="20231031 08:01:50.677"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.678" level="INFO">Typing text 'Gombos' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.678" endtime="20231031 08:01:50.734"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.734" level="INFO">Typing text 'Babett' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.734" endtime="20231031 08:01:50.772"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.772" level="INFO">Typing text 'E05' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.772" endtime="20231031 08:01:50.814"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.814" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.814" endtime="20231031 08:01:50.945"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:50.677" endtime="20231031 08:01:50.945"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:50.677" endtime="20231031 08:01:50.945"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:50.945" level="INFO">${first_name} = Babett</msg>
+<msg timestamp="20231031 08:01:50.945" level="INFO">${last_name} = Fischer</msg>
+<msg timestamp="20231031 08:01:50.945" level="INFO">${kulcs_szam} = C04</msg>
+<status status="PASS" starttime="20231031 08:01:50.945" endtime="20231031 08:01:50.945"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:50.945" level="INFO">Typing text 'Fischer' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:50.945" endtime="20231031 08:01:51.000"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.000" level="INFO">Typing text 'Babett' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.000" endtime="20231031 08:01:51.052"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.052" level="INFO">Typing text 'C04' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.052" endtime="20231031 08:01:51.109"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.110" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.110" endtime="20231031 08:01:51.244"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:50.945" endtime="20231031 08:01:51.244"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:50.945" endtime="20231031 08:01:51.244"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:51.244" level="INFO">${first_name} = Cecília</msg>
+<msg timestamp="20231031 08:01:51.244" level="INFO">${last_name} = Tóth</msg>
+<msg timestamp="20231031 08:01:51.244" level="INFO">${kulcs_szam} = E07</msg>
+<status status="PASS" starttime="20231031 08:01:51.244" endtime="20231031 08:01:51.244"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.245" level="INFO">Typing text 'Tóth' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.245" endtime="20231031 08:01:51.294"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.294" level="INFO">Typing text 'Cecília' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.294" endtime="20231031 08:01:51.343"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.343" level="INFO">Typing text 'E07' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.343" endtime="20231031 08:01:51.392"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.393" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.393" endtime="20231031 08:01:51.536"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:51.245" endtime="20231031 08:01:51.536"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:51.244" endtime="20231031 08:01:51.536"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:51.537" level="INFO">${first_name} = Viktor</msg>
+<msg timestamp="20231031 08:01:51.537" level="INFO">${last_name} = Mészáros</msg>
+<msg timestamp="20231031 08:01:51.537" level="INFO">${kulcs_szam} = E07</msg>
+<status status="PASS" starttime="20231031 08:01:51.537" endtime="20231031 08:01:51.537"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.538" level="INFO">Typing text 'Mészáros' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.538" endtime="20231031 08:01:51.584"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.584" level="INFO">Typing text 'Viktor' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.584" endtime="20231031 08:01:51.628"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.629" level="INFO">Typing text 'E07' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.628" endtime="20231031 08:01:51.694"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.695" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.695" endtime="20231031 08:01:51.845"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:51.537" endtime="20231031 08:01:51.845"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:51.536" endtime="20231031 08:01:51.845"/>
+</iter>
+<iter>
+<var name="${i}">13</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:51.845" level="INFO">${first_name} = Bálint</msg>
+<msg timestamp="20231031 08:01:51.845" level="INFO">${last_name} = Csák</msg>
+<msg timestamp="20231031 08:01:51.845" level="INFO">${kulcs_szam} = E07</msg>
+<status status="PASS" starttime="20231031 08:01:51.845" endtime="20231031 08:01:51.845"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.846" level="INFO">Typing text 'Csák' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.845" endtime="20231031 08:01:51.902"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:51.903" level="INFO">Typing text 'Bálint' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:51.902" endtime="20231031 08:01:52.036"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.037" level="INFO">Typing text 'E07' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.036" endtime="20231031 08:01:52.089"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.089" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.089" endtime="20231031 08:01:52.217"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:51.845" endtime="20231031 08:01:52.218"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:51.845" endtime="20231031 08:01:52.218"/>
+</iter>
+<iter>
+<var name="${i}">14</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:52.218" level="INFO">${first_name} = Benedek</msg>
+<msg timestamp="20231031 08:01:52.218" level="INFO">${last_name} = Lukács</msg>
+<msg timestamp="20231031 08:01:52.218" level="INFO">${kulcs_szam} = C06</msg>
+<status status="PASS" starttime="20231031 08:01:52.218" endtime="20231031 08:01:52.218"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.219" level="INFO">Typing text 'Lukács' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.219" endtime="20231031 08:01:52.262"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.262" level="INFO">Typing text 'Benedek' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.262" endtime="20231031 08:01:52.301"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.301" level="INFO">Typing text 'C06' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.301" endtime="20231031 08:01:52.344"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.345" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.344" endtime="20231031 08:01:52.494"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:52.219" endtime="20231031 08:01:52.494"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:52.218" endtime="20231031 08:01:52.494"/>
+</iter>
+<iter>
+<var name="${i}">15</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:52.494" level="INFO">${first_name} = Bálint</msg>
+<msg timestamp="20231031 08:01:52.494" level="INFO">${last_name} = Rácz</msg>
+<msg timestamp="20231031 08:01:52.494" level="INFO">${kulcs_szam} = E14</msg>
+<status status="PASS" starttime="20231031 08:01:52.494" endtime="20231031 08:01:52.494"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.495" level="INFO">Typing text 'Rácz' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.494" endtime="20231031 08:01:52.543"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.544" level="INFO">Typing text 'Bálint' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.544" endtime="20231031 08:01:52.606"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.606" level="INFO">Typing text 'E14' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.606" endtime="20231031 08:01:52.671"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.672" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.671" endtime="20231031 08:01:52.812"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:52.494" endtime="20231031 08:01:52.812"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:52.494" endtime="20231031 08:01:52.812"/>
+</iter>
+<iter>
+<var name="${i}">16</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:52.813" level="INFO">${first_name} = Csenge</msg>
+<msg timestamp="20231031 08:01:52.813" level="INFO">${last_name} = Benedek</msg>
+<msg timestamp="20231031 08:01:52.813" level="INFO">${kulcs_szam} = E07</msg>
+<status status="PASS" starttime="20231031 08:01:52.812" endtime="20231031 08:01:52.813"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.814" level="INFO">Typing text 'Benedek' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.813" endtime="20231031 08:01:52.865"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.865" level="INFO">Typing text 'Csenge' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.865" endtime="20231031 08:01:52.901"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.901" level="INFO">Typing text 'E07' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.901" endtime="20231031 08:01:52.944"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:52.944" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:52.944" endtime="20231031 08:01:53.077"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:52.813" endtime="20231031 08:01:53.077"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:52.812" endtime="20231031 08:01:53.077"/>
+</iter>
+<iter>
+<var name="${i}">17</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:53.077" level="INFO">${first_name} = Róbert</msg>
+<msg timestamp="20231031 08:01:53.077" level="INFO">${last_name} = Gyuris</msg>
+<msg timestamp="20231031 08:01:53.078" level="INFO">${kulcs_szam} = E07</msg>
+<status status="PASS" starttime="20231031 08:01:53.077" endtime="20231031 08:01:53.078"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.078" level="INFO">Typing text 'Gyuris' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.078" endtime="20231031 08:01:53.127"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.128" level="INFO">Typing text 'Róbert' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.127" endtime="20231031 08:01:53.164"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.165" level="INFO">Typing text 'E07' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.165" endtime="20231031 08:01:53.204"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.204" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.204" endtime="20231031 08:01:53.335"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:53.078" endtime="20231031 08:01:53.335"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:53.077" endtime="20231031 08:01:53.335"/>
+</iter>
+<iter>
+<var name="${i}">18</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:53.335" level="INFO">${first_name} = Noé</msg>
+<msg timestamp="20231031 08:01:53.335" level="INFO">${last_name} = Halász</msg>
+<msg timestamp="20231031 08:01:53.335" level="INFO">${kulcs_szam} = E14</msg>
+<status status="PASS" starttime="20231031 08:01:53.335" endtime="20231031 08:01:53.335"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.336" level="INFO">Typing text 'Halász' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.335" endtime="20231031 08:01:53.377"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.378" level="INFO">Typing text 'Noé' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.377" endtime="20231031 08:01:53.420"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.421" level="INFO">Typing text 'E14' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.420" endtime="20231031 08:01:53.469"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.470" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.469" endtime="20231031 08:01:53.607"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:53.335" endtime="20231031 08:01:53.607"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:53.335" endtime="20231031 08:01:53.607"/>
+</iter>
+<iter>
+<var name="${i}">19</var>
+<kw name="Generate Random Name" library="nevek.NevekLibrary">
+<var>${first_name}</var>
+<var>${last_name}</var>
+<var>${kulcs_szam}</var>
+<msg timestamp="20231031 08:01:53.608" level="INFO">${first_name} = Tamara</msg>
+<msg timestamp="20231031 08:01:53.608" level="INFO">${last_name} = Bertalan</msg>
+<msg timestamp="20231031 08:01:53.608" level="INFO">${kulcs_szam} = E07</msg>
+<status status="PASS" starttime="20231031 08:01:53.608" endtime="20231031 08:01:53.608"/>
+</kw>
+<kw name="Submit Form">
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${kulcs_szam}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=vezetek_nev</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.609" level="INFO">Typing text 'Bertalan' into text field 'id=vezetek_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.608" endtime="20231031 08:01:53.655"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kereszt_nev</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.656" level="INFO">Typing text 'Tamara' into text field 'id=kereszt_nev'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.656" endtime="20231031 08:01:53.703"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=kulcs_szam</arg>
+<arg>${kulcs_szam}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.704" level="INFO">Typing text 'E07' into text field 'id=kulcs_szam'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.703" endtime="20231031 08:01:53.761"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=mentes</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 08:01:53.761" level="INFO">Clicking button 'id=mentes'.</msg>
+<status status="PASS" starttime="20231031 08:01:53.761" endtime="20231031 08:01:53.901"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:53.608" endtime="20231031 08:01:53.902"/>
+</kw>
+<status status="PASS" starttime="20231031 08:01:53.608" endtime="20231031 08:01:53.902"/>
+</iter>
+<status status="PASS" starttime="20231031 08:01:48.050" endtime="20231031 08:01:53.902"/>
 </for>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231031 07:54:23.416" endtime="20231031 07:54:23.477"/>
+<status status="PASS" starttime="20231031 08:01:53.902" endtime="20231031 08:01:53.961"/>
 </kw>
-<status status="PASS" starttime="20231031 07:54:20.595" endtime="20231031 07:54:23.477"/>
+<status status="PASS" starttime="20231031 08:01:46.731" endtime="20231031 08:01:53.962"/>
 </test>
-<status status="PASS" starttime="20231031 07:54:20.532" endtime="20231031 07:54:23.477"/>
+<status status="PASS" starttime="20231031 08:01:46.668" endtime="20231031 08:01:53.962"/>
 </suite>
 <statistics>
 <total>
